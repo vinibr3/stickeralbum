@@ -29,6 +29,12 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails'
 # Use bootstrap framework
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+# Use HAML to Render Html 
+gem 'haml', '~> 5.0', '>= 5.0.4'
+# Use Pagination Framework
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+# Use CORS
+gem 'rack-cors', '~> 1.0', '>= 1.0.2'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
