@@ -35,6 +35,10 @@ gem 'haml', '~> 5.0', '>= 5.0.4'
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 # Use CORS
 gem 'rack-cors', '~> 1.0', '>= 1.0.2'
+# Use Devise for Authenticate User
+gem 'devise', '~> 4.4', '>= 4.4.3'
+# Use Figaro to create enviroment variables
+gem 'figaro', '~> 1.1', '>= 1.1.1'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

@@ -43,4 +43,20 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  
+  # Inicio configurações de E-mail
+  config.action_mailer.raise_delivery_errors = true  # Don't care if the mailer can't send.
+    # Configura opções de rota padrao para action mailer
+    config.action_mailer.default_url_options = { host: ENV['STICKER_ALBUM_DEFAULT_HOST'], 
+                                                 port: ENV['STICKER_ALBUM_DEFAULT_PORT'] }    
+    config.action_mailer.delivery_method = :smtp   #configura tipo de envio de e-mail 
+    config.action_mailer.smtp_settings = { #configurações para envio de e-mails
+      address: ENV['STICKER_ALBUM_EMAIL_SMTP'],
+      port: ENV['STICKER_ALBUM_EMAIL_PORT'],
+      domain: ENV['STICKER_ALBUM_EMAIL_DOMAIN'],
+      authentication: "plain",
+      enable_starttls_auto: true,
+      user_name: ENV['STICKER_ALBUM_EMAIL_USER'],
+      password: ENV['STICKER_ALBUM_EMAIL_PASSWORD']
+    }
 end

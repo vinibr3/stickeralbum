@@ -91,4 +91,20 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Inicio configurações de E-mail
+    config.action_mailer.raise_delivery_errors = true  # Don't care if the mailer can't send.
+    # Configura opções de rota padrao para action mailer
+    config.action_mailer.default_url_options = { host: 'localhost', 
+                                                 port: 3000 }    
+    config.action_mailer.delivery_method = :smtp   #configura tipo de envio de e-mail 
+    config.action_mailer.smtp_settings = { #configurações para envio de e-mails
+      address: 'smtp.gmail.com',
+      port: 587,
+      domain: 'gmail.com',
+      authentication: 'plain',
+      enable_starttls_auto: true,
+      user_name: 'viniciusdeoliveirasantos@gmail.com',
+      password: 'vinte3cinco'
+    }
 end

@@ -16,3 +16,8 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.navbar-header > .dropdown > button {
+    margin-top: 8px;
+    margin-bottom: 8px;
+ }
