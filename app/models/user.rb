@@ -11,8 +11,23 @@ class User < ApplicationRecord
 					  uniqueness: {case_sensitive: false}
 	validates :username, presence: true, length: {maximum: 20},
 						 uniqueness: true
-	has_one :album
+
+	has_one :album, :dependent => :destroy
 	has_many :stickers
-	after_create {create_album}
-	
+	has_many :sticker_packs
+	after_create :create_album, :creates_stickers_collection_to_user 
+
+	# Creates predefined stickers 'quantity' to user, default is 15
+	# 'quantity' can be retrieved from an 'Configuration Table' in database
+	# Orders StickerDefaults ids within an array and chose randonly one. 
+	# And repeats for 'quantity' times to create new stickers to user
+	def creates_stickers_collection_to_user quantity=15
+		sticker_default_ids = StickerDefault.pluck(:id)
+		quantity.times do 
+			position_selected_sticker_default_ids = 
+							rand(0..sticker_default_ids.size-1)
+			stickers.create({sticker_default_id: 
+				sticker_default_ids[position_selected_sticker_default_ids]})
+		end
+	end
 end
