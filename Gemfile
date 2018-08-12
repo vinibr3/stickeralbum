@@ -39,6 +39,8 @@ gem 'rack-cors', '~> 1.0', '>= 1.0.2'
 gem 'devise', '~> 4.4', '>= 4.4.3'
 # Use Figaro to create enviroment variables
 gem 'figaro', '~> 1.1', '>= 1.1.1'
+# Use HTTParty to web requests
+gem 'httparty', '~> 0.16.2'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

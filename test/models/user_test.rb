@@ -57,4 +57,14 @@ class UsersTest < ActiveSupport::TestCase
 		@user.password = @user.password_confirmation = " "*6
 		assert_not @user.valid?
 	end
+
+	test "should creates user album after create it" do
+		@user.save
+		assert @user.reload.album
+	end
+
+	test "should permit create one album only" do
+		@user.save
+		assert_not @user.create_album
+	end
 end

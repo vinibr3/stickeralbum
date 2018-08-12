@@ -5,5 +5,9 @@ Rails.application.routes.draw do
   root 'navigations#album'
   get '/album', to: 'navigations#album', as: :album
   get '',       to: 'navigation#exit',   as: :exit
-  resources :users, only: [:show]
+  resources :users, only: [] do
+  	resources :albums, only: [:show] do
+  		resources :spots, only: [:create]
+  	end
+  end
 end

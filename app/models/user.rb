@@ -11,5 +11,8 @@ class User < ApplicationRecord
 					  uniqueness: {case_sensitive: false}
 	validates :username, presence: true, length: {maximum: 20},
 						 uniqueness: true
+	has_one :album
+	has_many :stickers
+	after_create {create_album}
 	
 end
