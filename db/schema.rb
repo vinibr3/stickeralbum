@@ -10,7 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_08_153220) do
+ActiveRecord::Schema.define(version: 2018_08_12_062207) do
+
+  create_table "albums", force: :cascade do |t|
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_albums_on_user_id"
+  end
+
+  create_table "spots", force: :cascade do |t|
+    t.integer "album_id"
+    t.integer "sticker_id"
+    t.integer "sticker_default_id"
+    t.index ["album_id"], name: "index_spots_on_album_id"
+    t.index ["sticker_default_id"], name: "index_spots_on_sticker_default_id"
+    t.index ["sticker_id"], name: "index_spots_on_sticker_id"
+  end
+
+  create_table "sticker_defaults", force: :cascade do |t|
+    t.string "code", limit: 255, null: false
+    t.string "name", limit: 255, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["code"], name: "index_sticker_defaults_on_code"
+    t.index ["name"], name: "index_sticker_defaults_on_name"
+  end
+
+# Could not dump table "stickers" because of following StandardError
+#   Unknown type '' for column 'users_id'
 
   create_table "users", force: :cascade do |t|
     t.string "email", limit: 100, default: "", null: false

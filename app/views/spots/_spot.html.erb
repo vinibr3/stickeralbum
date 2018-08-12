@@ -1,0 +1,13 @@
+<div class="col-md-4">
+	<fieldset>
+		<legend> <%= spot.sticker_default.name %></legend>
+			<%= hidden_field :spot, :sticker_id %>
+			<%= hidden_field :spot, :sticker_default_id %>
+			<%= render_spot_image_helper spot %>
+			<%= link_to t('sticker_album.spot.stick'), 
+				user_album_spots_path(@user, @album), 
+				remote: true, 
+				class:"btn btn-default",
+				id:"#{spot.sticker_default_id}" %>
+	</fieldset>
+</div>

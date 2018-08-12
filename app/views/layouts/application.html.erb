@@ -13,6 +13,10 @@
     <%= render "layouts/navigation" if user_signed_in? %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <section id="section-main"> 
+      <div class="container">
+        <%= yield %>
+      </div>
+    </section>
   </body>
 </html>

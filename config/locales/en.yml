@@ -31,3 +31,6 @@
 
 en:
   hello: "Hello world"
+  sticker_album:
+    spot:
+      stick: "Stick"
