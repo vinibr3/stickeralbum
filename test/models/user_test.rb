@@ -63,11 +63,6 @@ class UsersTest < ActiveSupport::TestCase
 		assert @user.reload.album
 	end
 
-	test "should permit create one album only" do
-		@user.save
-		assert_not @user.reload.create_album
-	end
-
 	test "should creates 15 stickers to user after create him" do
 		@user.save
 		assert_equal 15, @user.reload.stickers.size
