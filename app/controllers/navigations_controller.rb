@@ -10,4 +10,8 @@ class NavigationsController < ApplicationController
 	def exit
 		redirect_to destroy_user_session_path
 	end
+
+	def stickers
+		redirect_to user_stickers_path current_user
+	end
 end
