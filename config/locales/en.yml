@@ -34,3 +34,5 @@ en:
   sticker_album:
     spot:
       stick: "Stick"
+    sticker_pack:
+      open: "Open Sticker Pack"

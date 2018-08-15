@@ -68,4 +68,15 @@ class UsersTest < ActiveSupport::TestCase
 		assert_equal 15, @user.reload.stickers.size
 	end
 
+	test "should create trade request offerers" do
+		@user.save
+		@trade_request = @user.reload.trade_request_offered.create(receiver_id: 2)
+		assert @trade_request, "#{@trade_request.inspect} should be created"
+	end
+
+	test "should create trade request reiceivers" do
+		@user.save
+		@trade_request = @user.reload.trade_request_received.create(offerer_id: 2)
+		assert @trade_request, "#{@trade_request.inspect} should be created"
+	end
 end

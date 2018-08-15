@@ -14,4 +14,12 @@ class NavigationsController < ApplicationController
 	def stickers
 		redirect_to user_stickers_path current_user
 	end
+
+	def packs
+		redirect_to user_sticker_packs_path current_user
+	end
+
+	def trade
+		redirect_to user_trade_requests_path current_user
+	end
 end

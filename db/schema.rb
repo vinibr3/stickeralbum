@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_12_072422) do
+ActiveRecord::Schema.define(version: 2018_08_14_161015) do
 
   create_table "albums", force: :cascade do |t|
     t.integer "user_id"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 2018_08_12_072422) do
     t.integer "size", default: 3, null: false
     t.integer "status", null: false
     t.datetime "opened_at"
+    t.datetime "created_at"
+    t.datetime "update_at"
     t.index ["user_id"], name: "index_sticker_packs_on_user_id"
   end
 
@@ -52,6 +54,18 @@ ActiveRecord::Schema.define(version: 2018_08_12_072422) do
     t.index ["sticker_default_id"], name: "index_stickers_on_sticker_default_id"
     t.index ["sticker_pack_id"], name: "index_stickers_on_sticker_pack_id"
     t.index ["user_id"], name: "index_stickers_on_user_id"
+  end
+
+  create_table "trade_requests", force: :cascade do |t|
+    t.integer "offerer_id"
+    t.integer "receiver_id"
+    t.integer "response", default: 0, null: false
+    t.datetime "responsed_at"
+    t.datetime "offered_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["offerer_id"], name: "index_trade_requests_on_offerer_id"
+    t.index ["receiver_id"], name: "index_trade_requests_on_receiver_id"
   end
 
   create_table "users", force: :cascade do |t|

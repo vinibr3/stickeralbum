@@ -15,6 +15,13 @@ class User < ApplicationRecord
 	has_one :album, :dependent => :destroy
 	has_many :stickers
 	has_many :sticker_packs
+	has_many :trade_request_offered,  class_name: 'TradeRequest', 
+	                                  foreign_key:'offerer_id',
+	                                  inverse_of: :offerer
+	has_many :trade_request_received, class_name: 'TradeRequest', 
+	                                  foreign_key:'receiver_id',
+	                                  inverse_of: :receiver
+
 	after_create :create_album, :creates_stickers_collection_to_user 
 
 	# Creates predefined stickers 'quantity' to user, default is 15

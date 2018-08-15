@@ -33,6 +33,8 @@ gem 'devise', '~> 4.4', '>= 4.4.3'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 # Use HTTParty to web requests
 gem 'httparty', '~> 0.16.2'
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -40,8 +42,7 @@ gem 'httparty', '~> 0.16.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :assets do
-	gem 'jquery-rails'
+#group :assets do (erro: "couldn't find file 'bootstrap-sprockets' with type 'application/javascript'")
 	# Use bootstrap framework
 	gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 	# Use HAML to Render Html 
@@ -50,8 +51,7 @@ group :assets do
 	gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 	# Use Bootstrap Pagination
 	gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
-	# Use jquery as the JavaScript library
-end
+#end
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

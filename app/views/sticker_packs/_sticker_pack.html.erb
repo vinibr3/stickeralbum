@@ -1,0 +1,10 @@
+<div class="col-md-4">
+	<fieldset>
+		<legend>Criado em &nbsp;<%= sticker_pack.created_at %></legend>
+			<%= render_sticker_pack_image sticker_pack %>
+			<%= link_to t('sticker_album.sticker_pack.open'), 
+				user_sticker_packs_path(current_user), 
+				remote: true, 
+				class:"btn btn-default" %>
+	</fieldset>
+</div>
