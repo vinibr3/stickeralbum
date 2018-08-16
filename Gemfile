@@ -35,6 +35,8 @@ gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'httparty', '~> 0.16.2'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+# Use jquery-ui
+gem 'jquery-ui-sass-rails', '~> 4.0', '>= 4.0.3.0'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

@@ -16,8 +16,18 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "jquery.ui.all";
 
 .navbar-header > .dropdown > button {
     margin-top: 8px;
     margin-bottom: 8px;
  }
+
+ /* Important part */
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-body{
+    height: 600px;
+    overflow-y: auto;
+}

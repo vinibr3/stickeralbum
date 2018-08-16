@@ -1,13 +1,15 @@
-<div class="col-md-4">
-	<fieldset>
-		<legend> <%= spot.sticker_default.name %></legend>
-			<%= hidden_field :spot, :sticker_id %>
-			<%= hidden_field :spot, :sticker_default_id %>
+<div class="col-sm-4 col-md-4">
+	<div class="spot">
+		<h4> <%= spot.name %></h4>
 			<%= render_spot_image_helper spot %>
+			<!--Link to modal -->
 			<%= link_to t('sticker_album.spot.stick'), 
-				user_album_spots_path(@user, @album), 
-				remote: true, 
+				new_user_album_spot_path(@user, @album)+
+				"?sticker_default_id=#{spot.sticker_default_id}", 
 				class:"btn btn-default",
-				id:"#{spot.sticker_default_id}" %>
-	</fieldset>
+				'data-toggle'=>"modal",
+				'data-target'=>"#application-modal",
+				remote: true if controller_name == "albums" &&
+				                    action_name == "show" %>
+	</div>
 </div>

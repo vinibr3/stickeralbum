@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [] do
   	resources :albums, only: [:show] do
-  		resources :spots, only: [:create]
+  		resources :spots, only: [:new,:create]
   	end
     resources :stickers,       only: [:index]
     resources :sticker_packs,  only: [:index]

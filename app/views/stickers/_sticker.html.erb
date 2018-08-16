@@ -1,6 +1,8 @@
-<div class="col-md-4">
-	<fieldset>
-		<legend> <%= sticker.name %></legend>
-			<%= image_tag sticker.image %>
-	</fieldset>
+<div class="col-sm-4 col-md-4">
+	<div class="spot">
+		<h4> <%= sticker.name %></h4>
+			<%= image_tag sticker.image, class:"img img-responsive", 
+			                             alt:"sticker.name" %>
+			<%= hidden_field :sticker, :id, value:"#{sticker.id}" %>           
+	</div>
 </div>

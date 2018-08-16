@@ -1,0 +1,8 @@
+<%= form_with(model: [@user,@album,@album.spots.build], class:'form-inline') do |form|%>
+	<div class="form-group">
+		<%= form.hidden_field :sticker_default_id %>
+		<%= form.hidden_field :sticker_id %>
+		<%= form.submit t('sticker_album.spot.choose'), class:'btn btn-primary'%>
+		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	</div>
+<% end %>

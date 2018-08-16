@@ -34,5 +34,13 @@ en:
   sticker_album:
     spot:
       stick: "Stick"
+      choose: "Choose"
+      notice: 
+        succesfull: "Sticker Sticked successfull."
+      alert: 
+        wrong_spot: "You can't stick this sticker here!"
+        error: "Something wrong happened! Try later!"
     sticker_pack:
       open: "Open Sticker Pack"
+    sticker:
+      modal_title: "Choose the Sticker"

@@ -1,0 +1,13 @@
+$("#modal-application-content").html("<%= j render @stickers %>");
+$("#spot_sticker_default_id").val("<%= @sticker_default_id %>");
+
+$("#modal-application-content .spot").on("click", function(){
+	$("#modal-application-content .spot").removeClass("selected");
+	$(this).addClass("selected");
+	var sticker_id_selected = $(this).find("#sticker_id").val();
+	$("#spot_sticker_id").val(sticker_id_selected);
+});
+
+$("#modal-application").on("hide.bs.modal", function(event){
+	$("#modal-application-content .spot").removeClass("selected");
+});

@@ -3,8 +3,10 @@ class Spot < ApplicationRecord
 	belongs_to :album,           validate: true, optional: false
 	belongs_to :sticker_default, validate: true, optional: false
 
+	attr_accessor :code, :name
+
 	def sticked?
-		sticker.present?
+		self.sticker_id.present?
 	end
 
 	def sticked_image

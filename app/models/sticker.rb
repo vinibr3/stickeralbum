@@ -15,4 +15,10 @@ class Sticker < ApplicationRecord
 	def image
 		"sticked-user.png"
 	end
+
+	def self.stickers_order_by_code user_id
+		where(user_id: user_id)
+		.includes(:sticker_default)
+		.order('sticker_defaults.code')
+	end
 end
