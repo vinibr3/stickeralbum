@@ -44,3 +44,14 @@ en:
       open: "Open Sticker Pack"
     sticker:
       modal_title: "Choose the Sticker"
+    new_trade:
+      modal_title: "Stickers"
+    user:
+      view_stickers: "View Stickers"
+    trade_request:
+      new: "Send Trade Request"
+      error_username: "No Trade Request sent, the username not extists!"
+      successfull: "Trade Request sent successfull."
+      error: "Something wrong happened! Try later!"
+      yourself: "You can't send Trade Request to yourself."
+

@@ -22,4 +22,8 @@ class NavigationsController < ApplicationController
 	def trade
 		redirect_to user_trade_requests_path current_user
 	end
+
+	def new_trade
+		redirect_to users_path
+	end
 end

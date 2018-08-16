@@ -1,0 +1,17 @@
+<div class="col-sm-3 col-md-3">
+	<div class="spot">
+		<h4> <%= user.username %></h4>
+			<%= image_tag user.image, class:"img img-responsive", 
+			                             alt:"user.username" %>
+			<!-- View user's sticker -->
+			<%= link_to t('sticker_album.user.view_stickers'), 
+				"#{user_search_path(current_user)}"+
+				"?username=#{user.username}", 
+				class:"btn btn-default",
+				'data-toggle'=>"modal",
+				'data-target'=>"#application-modal",
+				remote: true %>
+			<!-- Send Trade Request -->
+			<%=  render partial: "trade_requests/form", locals: {user: user} %>        
+	</div>
+</div>

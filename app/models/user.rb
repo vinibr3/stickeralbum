@@ -37,4 +37,8 @@ class User < ApplicationRecord
 				sticker_default_ids[position_selected_sticker_default_ids]})
 		end
 	end
+
+	def image
+		"perfil.png"
+	end
 end

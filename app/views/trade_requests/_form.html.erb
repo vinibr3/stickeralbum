@@ -1,0 +1,7 @@
+<!-- Send Trade Request -->
+<%= link_to t('sticker_album.trade_request.new'), 
+				"/users/#{user.id}/trade_requests"+
+				"?username=#{user.username}",
+				method: :post, 
+				class:"btn btn-default",
+				remote: true %>  
