@@ -54,4 +54,6 @@ en:
       successfull: "Trade Request sent successfull."
       error: "Something wrong happened! Try later!"
       yourself: "You can't send Trade Request to yourself."
+      mailer:
+        request_subject: "Trade Stickers"
 
