@@ -7,6 +7,10 @@ module ApplicationHelper
 		if controller_name == "users" && action_name == "index"
 			render inline: "#{t('sticker_album.new_trade.modal_title')}"
 		end
+
+		if controller_name == "sticker_packs" && action_name == "index"
+			render inline: t('sticker_album.sticker_pack.modal.title')
+		end
 	end
 
 	def render_application_modal_footer_content_form
@@ -15,7 +19,15 @@ module ApplicationHelper
 		end
 
 		if controller_name == "users" && action_name == "index"
-			"<button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>".html_safe
+			dismiss_modal_button
 		end
+
+		if controller_name == "sticker_packs" && action_name == "index"
+			dismiss_modal_button
+		end
+	end
+
+	def dismiss_modal_button
+		"<button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>".html_safe
 	end
 end

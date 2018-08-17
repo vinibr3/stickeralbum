@@ -5,6 +5,15 @@ class StickerDefault < ApplicationRecord
 	validates :name, format:{with: VALID_ALPHA_REGEX},
 					 presence: true, length:{maximum: 255}, uniqueness: true
 
+	def self.find_ids_rand(quantity=3)
+		ids_default = StickerDefault.pluck(:id)
+		ids_rand = Array.new
+		quantity.times do
+			ids_rand << ids_default[rand(0..ids.size-1)]
+		end
+		ids_rand	
+	end
+
 	def self.populate
 		sticker_defaults_from_gist_to_json.each do |key, value|
 			new_sticker_defautl = StickerDefault.new(code: key, name: value)
