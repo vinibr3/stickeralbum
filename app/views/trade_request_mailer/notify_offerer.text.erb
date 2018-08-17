@@ -1,0 +1,13 @@
+Hello <%= @offerer.username %>,
+
+You sent me an Trade Request for my Stickers.
+
+<% if @trade_request.acepted? %>
+    I would like trade my stickers with you.
+<%end%>
+
+<% if @trade_request.denied? %>
+    I wouldn't like trade my stickers with you.
+<%end%>
+
+Thanks!

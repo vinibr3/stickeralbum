@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hello&nbsp;<%= @offerer.username %>,</h1>
+    <p>You sent me an Trade Request for my Stickers. <br></p>
+    <%= content_tag :p, "I would like trade my stickers with you." if @trade_request.acepted? %>
+    <%= content_tag :p, "I wouldn't like trade my stickers with you." if @trade_request.denied? %>
+    </br>
+    <p>Thanks!</p>
+  </body>
+</html>

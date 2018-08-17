@@ -41,11 +41,11 @@ class TradeRequestsController < ApplicationController
 	end
 
 	def update
-		@trade_request_id=permitted_params[:id]
-		@trade_request=TradeRequest.find(@trade_request_id)
-		@trade_request.response=permitted_params[:response].to_i
+		@trade_request_id = permitted_params[:id]
+		@trade_request = TradeRequest.find(@trade_request_id)
+		@trade_request.response = permitted_params[:response].to_i
 		@trade_request.save
-		redirect_to new_trade_path
+		redirect_to trade_requests_path
 	end
 
 	private

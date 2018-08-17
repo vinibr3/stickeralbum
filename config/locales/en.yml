@@ -69,4 +69,5 @@ en:
         response_date: "Response Date"
       mailer:
         request_subject: "Trade Stickers"
+        offerer_subject: "Response to your Trade Request"
 
