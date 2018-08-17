@@ -17,6 +17,6 @@ Rails.application.routes.draw do
     resources :stickers,       only: [:index]
     get '/search',             to: 'stickers#search'
     resources :sticker_packs,  only: [:index]
-    resources :trade_requests, only: [:index, :create]  
+    resources :trade_requests, only: [:index, :create, :update]  
   end
 end

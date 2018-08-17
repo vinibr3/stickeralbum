@@ -1,0 +1,47 @@
+<div class="row">
+	<div class="col-md-12">
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<caption><%= t('sticker_album.trade_request.to_response.title') %></caption>
+				<tr>
+					<th><%= t('sticker_album.trade_request.to_response.offerer') %></th>
+					<th><%= t('sticker_album.trade_request.to_response.reponse') %></th>
+				</tr>
+				<% @trade_request_to_responses.each do |trade_request_to_response| %>
+					<tr id=<%="#{trade_request_to_response.id}"%> >
+						<td> 
+							<% username = trade_request_to_response.offerer.username %>
+							<% trade_id = trade_request_to_response.id %>
+							<%= link_to username, 
+										"#{user_search_path(current_user)}"+
+										"?username=#{username}", 
+										class:"btn btn-link",
+										'data-toggle'=>"modal",
+										'data-target'=>"#application-modal",
+										remote: true %>
+						</td>
+						<td>
+							<%= link_to t('sticker_album.trade_request.deny'), 
+										"#{user_trade_request_path(current_user,trade_request_to_response)}"+
+										"?response=1",
+										method: :patch, 
+										class:"btn btn-danger",
+										remote: true %>
+							<%= link_to t('sticker_album.trade_request.acept'), 
+										"#{user_trade_request_path(current_user,trade_request_to_response)}"+
+										"?response=2",
+										method: :patch, 
+										class:"btn btn-success",
+										remote: true %>
+						</td>
+					</tr>
+				<%end%>
+			</table>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+		<%= will_paginate @trade_request_to_responses, renderer: BootstrapPagination::Rails %>
+	</div>
+</div>

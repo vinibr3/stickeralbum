@@ -1,11 +1,13 @@
 class TradeRequestsController < ApplicationController
 	def index
 		@user = current_user
-		@trade_requests=
-			TradeRequest.where(offerer_id: @user.id)
-						.includes(:offerer, :receiver)
-						.order(:created_at)
-						.paginate(page: params[:page], per_page: 10)
+
+		@trade_requests = @user.trade_requests
+			.paginate(page: params[:page], per_page: 10)
+						
+		@trade_request_to_responses = 
+			@user.trade_request_to_responses
+				 .paginate(page: params[:page], per_page: 10)
 	end
 
 	def create
@@ -38,8 +40,16 @@ class TradeRequestsController < ApplicationController
 		redirect_to new_trade_path
 	end
 
+	def update
+		@trade_request_id=permitted_params[:id]
+		@trade_request=TradeRequest.find(@trade_request_id)
+		@trade_request.response=permitted_params[:response].to_i
+		@trade_request.save
+		redirect_to new_trade_path
+	end
+
 	private
 		def permitted_params
-			params.permit(:user_id,:username)
+			params.permit(:id,:user_id,:username,:response)
 		end
 end

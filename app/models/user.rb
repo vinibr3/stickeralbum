@@ -41,4 +41,17 @@ class User < ApplicationRecord
 	def image
 		"perfil.png"
 	end
+
+	def trade_request_to_responses
+		trade_request_received
+	    .includes(:offerer)
+	    .not_responsed
+	end
+
+	def trade_requests
+		TradeRequest.where(offerer_id: self.id)
+					.or(TradeRequest.where(receiver_id: self.id))
+					.includes(:offerer, :receiver)
+					.order("created_at DESC")
+	end
 end

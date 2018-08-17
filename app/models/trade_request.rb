@@ -12,4 +12,8 @@ class TradeRequest < ApplicationRecord
 	def send_trade_request_mailer_to_receiver
 		TradeRequestMailer.with(trade_request: self).notify_receiver.deliver_later
 	end
+
+	def params_to_update
+		""
+	end
 end

@@ -54,6 +54,19 @@ en:
       successfull: "Trade Request sent successfull."
       error: "Something wrong happened! Try later!"
       yourself: "You can't send Trade Request to yourself."
+      to_response:
+        title: "You have new Trade Requests"
+        offerer: "Offerer"
+        response: "Response"
+        deny: "Deny"
+        acept: "Acept"
+      history:
+        title: "Trade History"
+        date: "Date"
+        offerer: "Offerer"
+        receiver: "Receiver"
+        response: "Response"
+        response_date: "Response Date"
       mailer:
         request_subject: "Trade Stickers"
 
