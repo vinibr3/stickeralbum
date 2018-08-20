@@ -10,4 +10,5 @@ $("#modal-application-content .spot").on("click", function(){
 
 $("#modal-application").on("hide.bs.modal", function(event){
 	$("#modal-application-content .spot").removeClass("selected");
+	$("#<%= @code %>").hide();
 });

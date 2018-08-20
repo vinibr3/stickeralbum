@@ -13,5 +13,4 @@ class UsersController < ApplicationController
 		def permitted_params
 			params.permit(:usernane)
 		end
-
 end

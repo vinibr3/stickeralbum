@@ -5,6 +5,15 @@ class Spot < ApplicationRecord
 
 	attr_accessor :code, :name
 
+	def self.build_spots elementes
+		spots = Array.new
+		puts "#{elementes.class}"
+		elementes.each do |elemente|
+			spots << Spot.new(elemente)
+		end
+		spots
+	end
+
 	def sticked?
 		self.sticker_id.present?
 	end

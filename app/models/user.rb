@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, 
-         :validatable, :confirmable
+         :validatable #, :confirmable
 	
 	before_save {email.downcase!}
 	validates :email, presence: true, length: { maximum: 100 }, 

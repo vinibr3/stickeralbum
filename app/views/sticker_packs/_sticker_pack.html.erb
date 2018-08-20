@@ -1,14 +1,14 @@
-<div class="col-md-4" id="<%=sticker_pack.id%>">
+<div class="col-md-3" id="<%=sticker_pack.id%>">
 	<div class="spot">
 		<h4>
-			<%= t('sticker_album.sticker_pack.title')+sticker_pack.created_at.strftime("%e, %d %b %Y %H:%M") %>
+			<%= t('sticker_album.sticker_pack.title')+sticker_pack.created_at.strftime("%d %b %Y %H:%M") %>
 		</h4>
 		<%= render_sticker_pack_image sticker_pack %>
 		<%= link_to t('sticker_album.sticker_pack.open'), 
 				user_sticker_pack_path(current_user,sticker_pack),
 				method: :patch, 
 				remote: true, 
-				class:"btn btn-default",
+				class:"btn btn-primary",
 				'data-toggle'=>"modal",
 				'data-target'=>"#application-modal" %>
 	</div>

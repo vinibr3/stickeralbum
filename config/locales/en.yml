@@ -32,6 +32,14 @@
 en:
   hello: "Hello world"
   sticker_album:
+    nothing: "nothing to show"
+    navigation:
+      album: "Album"
+      stickers: "Stickers"
+      packs: "Packs"
+      new_trades: "New Trades"
+      trade_history: "Trade History"
+      wellcome: "Welcome"
     spot:
       stick: "Stick"
       choose: "Choose"
@@ -41,7 +49,7 @@ en:
         wrong_spot: "You can't stick this sticker here!"
         error: "Something wrong happened! Try later!"
     sticker_pack:
-      open: "Open Sticker Pack"
+      open: "Open"
       title: "Available at "
       modal:
         title: "Congratulations, you have new Stickers"
@@ -58,7 +66,7 @@ en:
       error: "Something wrong happened! Try later!"
       yourself: "You can't send Trade Request to yourself."
       to_response:
-        title: "You have new Trade Requests"
+        title: "Your Trade Requests"
         offerer: "Offerer"
         response: "Response"
         deny: "Deny"

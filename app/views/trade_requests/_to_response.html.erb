@@ -1,8 +1,8 @@
 <div class="row">
 	<div class="col-md-12">
 		<div class="table-responsive">
-			<table class="table table-striped">
-				<caption><%= t('sticker_album.trade_request.to_response.title') %></caption>
+			<table class="table table-striped table-hover">
+				<caption><h4><%= t('sticker_album.trade_request.to_response.title') %></h4></caption>
 				<tr>
 					<th><%= t('sticker_album.trade_request.to_response.offerer') %></th>
 					<th><%= t('sticker_album.trade_request.to_response.reponse') %></th>
@@ -36,6 +36,7 @@
 						</td>
 					</tr>
 				<%end%>
+				<tr><td colspan=2><%= render inline: t('sticker_album.nothing') if @trade_request_to_responses%></td></tr>
 			</table>
 		</div>
 	</div>

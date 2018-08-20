@@ -15,7 +15,7 @@ class SpotsController < ApplicationController
 		if(sticker_default_exits && sticker_exists)
 			@sticker = Sticker.find(permitted[:sticker_id])
 			if(@sticker.sticker_default_id == permitted[:sticker_default_id].to_i)
-				# Creats Spot (stichttp://localhost:3000/users/1/albums/2/spots/new?sticker_default_id=8k the Sticker)
+				# Creats Spot 
 				current_user.album.spots.create(permitted)
 				# Remove Sticker from user collection
 				@sticker.user_id = nil 
@@ -28,12 +28,13 @@ class SpotsController < ApplicationController
 			flash[:alert]=t('sticker_album.spot.alert.error')
 			redirect_to album_path and return
 		end
+		@code = permitted_params[:code]
 		flash[:notice] = t('sticker_album.spot.notice.succesfull')
 		redirect_to album_path album_path and return
 	end
 
 	private 
 		def permitted_params
-			params.require(:spot).permit(:sticker_default_id, :sticker_id)
+			params.require(:spot).permit(:sticker_default_id, :sticker_id, :code)
 		end
 end

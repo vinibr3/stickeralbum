@@ -1,8 +1,8 @@
 <div class="row">
 	<div class="col-md-12">
 		<div class="table-responsive">
-			<table class="table table-striped">
-				<caption><%= t('sticker_album.trade_request.history.title') %></caption>
+			<table class="table table-bordered">
+				<caption><h4><%= t('sticker_album.trade_request.history.title') %></h4></caption>
 				<tr>
 					<th><%= t('sticker_album.trade_request.history.date')         %></th>
 					<th><%= t('sticker_album.trade_request.history.offerer')      %></th>
@@ -10,7 +10,7 @@
 					<th><%= t('sticker_album.trade_request.history.response')     %></th>
 					<th><%= t('sticker_album.trade_request.history.response_date')%></th>
 				</tr>
-				<%= render @trade_requests %>
+				<%= render @trade_requests || t('sticker_album.nothing') %>
 			</table>
 		</div>
 	</div>

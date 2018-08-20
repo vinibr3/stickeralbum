@@ -19,10 +19,12 @@ class AlbumsController < ApplicationController
 					# Set spot sticker_id, it's mean spot is sticked
 					spot_default[:sticker_id] = spot_sticked[1]
 				end
-				@spots << Spot.new(spot_default)
+				# @spots << Spot.new(spot_default)
 			end
 		end
-		@spots
+		# Spot Initialize overrided 
+		@spots = Spot.build_spots(spot_defaults)
+		# logger.debug "#{@spots.inspect}"
 	end
 
 	private 

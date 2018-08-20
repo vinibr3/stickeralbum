@@ -54,7 +54,7 @@ gem 'jquery-ui-sass-rails', '~> 4.0', '>= 4.0.3.0'
 	# Use Bootstrap Pagination
 	gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
 #end
-
+gem 'devise-bootstrap-views', '~> 1.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

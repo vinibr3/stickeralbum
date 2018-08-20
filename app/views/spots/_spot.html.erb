@@ -1,15 +1,17 @@
-<div class="col-sm-4 col-md-4">
+<div class="col-sm-3 col-md-3">
 	<div class="spot">
 		<h4> <%= spot.name %></h4>
 			<%= render_spot_image_helper spot %>
 			<!--Link to modal -->
 			<%= link_to t('sticker_album.spot.stick'), 
 				new_user_album_spot_path(@user, @album)+
-				"?sticker_default_id=#{spot.sticker_default_id}", 
-				class:"btn btn-default",
+				"?sticker_default_id=#{spot.sticker_default_id}&code=#{spot.code}", 
+				class:"btn btn-primary",
+				id:"#{spot.code}",	
 				'data-toggle'=>"modal",
 				'data-target'=>"#application-modal",
 				remote: true if controller_name == "albums" &&
-				                    action_name == "show" %>
+				                    action_name == "show" &&
+				                    spot.sticker_id.nil?%>                   
 	</div>
 </div>
